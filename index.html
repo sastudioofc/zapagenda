@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZapAgenda: menos faltas na sua barbearia</title>
+<meta name="description" content="Lembrete automático no WhatsApp e agendamento sem app para barbearias. 30 dias grátis para as primeiras barbearias.">
+<style>
+  :root {
+    --bg: #0f1412;
+    --card: #171f1c;
+    --text: #eef3f0;
+    --muted: #a6b3ad;
+    --accent: #25d366;
+    --accent-dark: #128c4a;
+    --line: #26322d;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 20px 0; }
+  .logo { font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; }
+  .logo span { color: var(--accent); }
+
+  .hero { padding: 48px 0 56px; text-align: center; }
+  .badge {
+    display: inline-block; font-size: .85rem; font-weight: 600;
+    color: var(--accent); border: 1px solid var(--accent-dark);
+    border-radius: 999px; padding: 4px 14px; margin-bottom: 20px;
+  }
+  h1 { font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 18px; }
+  h1 em { font-style: normal; color: var(--accent); }
+  .lead { font-size: 1.15rem; color: var(--muted); max-width: 620px; margin: 0 auto 32px; }
+
+  .btn {
+    display: inline-block; background: var(--accent); color: #062b16;
+    font-weight: 700; font-size: 1.1rem; text-decoration: none;
+    padding: 16px 30px; border-radius: 12px;
+    transition: transform .1s, background .2s;
+  }
+  .btn:hover { background: #3be07a; transform: translateY(-1px); }
+  .small { font-size: .9rem; color: var(--muted); margin-top: 12px; }
+
+  section { padding: 48px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 1.7rem; letter-spacing: -0.02em; margin-bottom: 24px; text-align: center; }
+
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+  .card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  .card p { color: var(--muted); }
+  .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--accent-dark); color: #fff; font-weight: 700; margin-bottom: 12px;
+  }
+
+  .chat { max-width: 380px; margin: 0 auto; background: #0b141a; border-radius: 16px; padding: 18px; border: 1px solid var(--line); }
+  .msg { background: #005c4b; color: #e9fdf4; padding: 10px 14px; border-radius: 10px 10px 2px 10px; margin-left: 40px; margin-bottom: 8px; font-size: .95rem; }
+  .msg.in { background: #202c33; border-radius: 10px 10px 10px 2px; margin-left: 0; margin-right: 80px; }
+  .time { display: block; text-align: right; font-size: .7rem; opacity: .6; margin-top: 4px; }
+
+  .price { max-width: 420px; margin: 0 auto; text-align: center; }
+  .price .old { color: var(--muted); text-decoration: line-through; }
+  .card.price .value { color: var(--text); font-size: 3rem; font-weight: 800; letter-spacing: -0.03em; }
+  .price .value small { font-size: 1rem; font-weight: 500; color: var(--muted); }
+  .price ul { list-style: none; text-align: left; margin: 20px 0 28px; }
+  .price li { padding: 6px 0 6px 28px; position: relative; }
+  .price li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+  details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
+  summary { font-weight: 600; cursor: pointer; }
+  details p { color: var(--muted); margin-top: 10px; }
+
+  footer { padding: 32px 0 48px; text-align: center; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap"><div class="logo">Zap<span>Agenda</span></div></div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div class="badge">Lançamento: 30 dias grátis</div>
+    <h1>Chega de cliente que <em>marca e não aparece</em></h1>
+    <p class="lead">O ZapAgenda manda lembrete automático no WhatsApp antes de cada horário e deixa seu cliente marcar sozinho, sem baixar aplicativo.</p>
+    <a class="btn cta" href="#">Quero testar grátis</a>
+    <p class="small">Sem cartão de crédito. Vagas limitadas para as primeiras barbearias.</p>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>Como funciona</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="num">1</div>
+          <h3>O cliente marca pelo link</h3>
+          <p>Você coloca o link na bio do Instagram e no WhatsApp. O cliente escolhe o dia, o horário e o barbeiro.</p>
+        </div>
+        <div class="card">
+          <div class="num">2</div>
+          <h3>O lembrete vai sozinho</h3>
+          <p>Um dia antes e algumas horas antes, o cliente recebe uma mensagem no WhatsApp para confirmar ou remarcar.</p>
+        </div>
+        <div class="card">
+          <div class="num">3</div>
+          <h3>Sua agenda fica cheia</h3>
+          <p>Quem desmarca libera o horário na hora, e você consegue encaixar outro cliente no lugar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>O que o seu cliente recebe</h2>
+      <div class="chat">
+        <div class="msg in">Fala, Lucas! Lembrete do seu corte amanhã às 15h na Barbearia do Zé ✂️<br>Responda 1 para confirmar ou 2 para remarcar.<span class="time">14:02</span></div>
+        <div class="msg">1<span class="time">14:05</span></div>
+        <div class="msg in">Confirmado! Te esperamos amanhã às 15h 👊<span class="time">14:05</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Preço de fundador</h2>
+      <div class="card price">
+        <p class="old">R$ 69/mês</p>
+        <p class="value">R$ 49<small>/mês</small></p>
+        <p class="small">para sempre, para quem entrar no lançamento</p>
+        <ul>
+          <li>30 dias grátis para testar</li>
+          <li>Lembretes ilimitados no WhatsApp</li>
+          <li>Link de agendamento para Instagram e WhatsApp</li>
+          <li>Vários barbeiros na mesma agenda</li>
+          <li>Sem fidelidade: cancele quando quiser</li>
+        </ul>
+        <a class="btn cta" href="#">Garantir minha vaga</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Dúvidas</h2>
+      <details><summary>Meu cliente precisa baixar algum app?</summary><p>Não. Ele marca por um link no navegador e recebe os lembretes no WhatsApp que já usa.</p></details>
+      <details><summary>Preciso de computador?</summary><p>Não. Dá para ver e organizar a agenda pelo celular.</p></details>
+      <details><summary>Quando começa o teste?</summary><p>Estamos liberando os acessos por ordem de inscrição nas próximas semanas. Você recebe o aviso pelo WhatsApp.</p></details>
+      <details><summary>E se eu não gostar?</summary><p>Durante o teste você não paga nada. Depois, pode cancelar a qualquer momento, sem multa.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">ZapAgenda · Feito para barbearias brasileiras</div>
+</footer>
+
+<script>
+  // Troque pelo seu número com DDI e DDD, só números. Ex.: 5511999998888
+  const WHATSAPP_NUMERO = "554891248377";
+  const MENSAGEM = "Oi! Quero garantir minha vaga no teste grátis do ZapAgenda. Nome da barbearia: ";
+
+  const link = "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(MENSAGEM);
+  document.querySelectorAll(".cta").forEach(function (a) {
+    a.href = link;
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+</script>
+</body>
+</html>
